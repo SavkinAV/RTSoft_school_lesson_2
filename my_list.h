@@ -61,7 +61,8 @@ public:
 
 		return head;
 	}
-
+	
+	// to do
 	//std::shared_ptr<m_node<T>>get_node() {
 	//	return 
 	//
@@ -73,12 +74,13 @@ public:
 			return nullptr;
 		else {
 			std::shared_ptr< m_node<T>> current = head;
-			while (current <= tale) {
+			do{
 				head = current->next;
 				current.reset();
 				current = head;
 				my_lst_size--;
 			}
+			while(current != nullptr);
 		}
 	}
 	void push_front(T data) {
@@ -102,7 +104,7 @@ public:
 	void pop_back() {
 		std::shared_ptr<m_node<T>> tale_tmp = tale;
 		std::shared_ptr< m_node<T>> current = head;
-		while (current < tale) {
+		while (current != nullptr) {
 			current = current->next;
 		}
 		tale = current->next;
