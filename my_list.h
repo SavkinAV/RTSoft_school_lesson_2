@@ -62,10 +62,10 @@ public:
 		return head;
 	}
 
-	std::shared_ptr<m_Node<T>>get_node() {
-		return 
-
-	}
+	//std::shared_ptr<m_Node<T>>get_node() {
+	//	return 
+	//
+	//}
 
 
 	void clear(){
@@ -123,8 +123,8 @@ public:
 		std::unique_ptr<my_list> new_list;
 		std::shared_ptr<m_Node<T>> current = list->get_head();
 		while (current->next != nullptr) {
-			new_list push_back(current);
-			current = list->
+			new_list->push_back(current);
+			current = current->next;
 		}
 
 		return new_list;
